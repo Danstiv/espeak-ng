@@ -158,12 +158,12 @@ void SetSpeed(int control)
 	#if USE_LIBSONIC
 	int wpm_value = wpm;
 
-	if (voice->speed_percent > 0)
-		wpm = (wpm * voice->speed_percent)/100;
+	// if (voice->speed_percent > 0)
+		// wpm = (wpm * voice->speed_percent)/100;
 
 	if (control & 2)
 		DoSonicSpeed(1 * 1024);
-	if ((wpm_value >= espeakRATE_MAXIMUM) || ((wpm_value > speed.fast_settings) && (wpm > 350))) {
+	if ((wpm_value > espeakRATE_MAXIMUM) || ((wpm_value > speed.fast_settings) && (wpm > 350))) {
 		int wpm2;
 		wpm2 = wpm;
 		wpm = espeakRATE_NORMAL;
@@ -192,8 +192,8 @@ void SetSpeed(int control)
 	}
 
 	#else
-	if (voice->speed_percent > 0)
-		wpm = (wpm * voice->speed_percent)/100;
+	// if (voice->speed_percent > 0)
+		// wpm = (wpm * voice->speed_percent)/100;
 	#endif
 
 	SetSpeedMultiplier(&x, &wpm);
