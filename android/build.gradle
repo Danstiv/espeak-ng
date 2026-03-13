@@ -35,6 +35,7 @@ android {
     }
 
     defaultConfig {
+        applicationId = "com.reecedunn.espeak.ru_only"
         minSdk = 21
         targetSdk = 33
         versionCode = 22
