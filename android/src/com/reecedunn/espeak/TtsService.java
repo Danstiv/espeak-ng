@@ -316,7 +316,7 @@ public class TtsService extends TextToSpeechService {
     protected synchronized void onSynthesizeText(SynthesisRequest request, SynthesisCallback callback) {
         final Voice voice;
         synchronized (mAvailableVoices) {
-            voice = mMatchingVoice;
+            voice = mAvailableVoices.get("ru-cl");
         }
         if (voice == null)
             return;
